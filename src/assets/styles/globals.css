@@ -1,0 +1,39 @@
+:root {
+    --main-color: #0028FA;
+}
+
+@font-face {
+    font-family: "Perpetua Titling MT";
+    src: 
+        url("/PERTILI.TTF") format("ttf");
+    font-style: normal;
+    font-display: optional;
+}
+
+@font-face {
+    font-family: "Overpass";
+    src: url("/Overpass.ttf") format("ttf");
+    font-style: normal;
+    font-display: optional;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    margin: auto;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    overflow: scroll;
+}
+
+p{
+    font-family: "Overpass", sans-serif;
+}

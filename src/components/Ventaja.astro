@@ -1,0 +1,42 @@
+---
+const { image: Image, title, description } = Astro.props;
+---
+
+<div class="ventajaContainer">
+    <Image class="IconV"/>
+    <h3>{title}</h3>
+    <p>{description}</p>
+</div>
+
+<style>
+    .ventajaContainer{
+        width: 22em;
+        height: 25em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #fff;
+    }
+
+    .IconV{
+        width: 70px;
+        height: 70px;
+        margin-bottom: 1em;
+        margin-top: 2em;
+    }
+
+    .ventajaContainer h3{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.5em;
+        font-weight: 100;
+        margin-bottom: 2em;
+        width: 10em;
+        text-align: center;
+    }
+
+    .ventajaContainer p {
+        width: 15em;
+        font-size: 14px;
+        text-align: center;
+    }
+</style>
