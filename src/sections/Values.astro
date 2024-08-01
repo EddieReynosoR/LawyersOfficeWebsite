@@ -1,40 +1,14 @@
 ---
 import Ventaja from "@components/Ventaja.astro";
 
-import Justice from "@components/icons/Justice.astro";
-import type { ActionError } from "astro:actions";
-import type { StringMappingType } from "typescript";
-
-type Ventajas = {
-    icon: (props: Record<string, any>) => any,
-    title: string,
-    description: string,
-}
-
-const ventajas:Ventajas[] = [
-    {
-        icon: Justice,
-        title: "Nosotros defendemos la justicia",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim suscipit dolor eget volutpat. Cras libero urna, ultrices at mattis vitae, scelerisque eu odio."
-    },
-    {
-        icon: Justice,
-        title: "Nosotros defendemos la justicia",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim suscipit dolor eget volutpat. Cras libero urna, ultrices at mattis vitae, scelerisque eu odio."
-    },
-    {
-        icon: Justice,
-        title: "Nosotros defendemos la justicia",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim suscipit dolor eget volutpat. Cras libero urna, ultrices at mattis vitae, scelerisque eu odio."
-    }
-]
+import { ventajas } from "src/data/values";
 ---
 
-<section class="ventajas">
-    <div class="title">
-        <h1>¿Porqué somos tu mejor opción?</h1>
+<section class="bg-[#F5F5F5] h-screen">
+    <div class="flex justify-center pt-[10em]">
+        <h1 class="font-perpetua text-primary values-title not-italic font-thin mb-[2em]">¿Porqué somos tu mejor opción?</h1>
     </div>
-    <div class="values">
+    <div class="flex gap-[3em] justify-center">
         {ventajas.map((item) => (
             <Ventaja image={item.icon} title={item.title} description={item.description} />
         ))}
@@ -42,33 +16,7 @@ const ventajas:Ventajas[] = [
 </section>
 
 <style>
-    .ventajas{
-        background: #F5F5F5;
-        height: 100vh;
-    }
-
-    .ventajas .title{
-        display: flex;
-        justify-content: center;
-        padding-top: 10em;
-    }
-
-    .ventajas .title h1{
+    .values-title{
         font-size: clamp(1.5em,3vw,4.2em);
-        color: var(--main-color);
-        font-style: normal;
-        font-weight: 100;
-        margin-bottom: 2em;
-    }
-
-    .IconVentaja{
-        width: 50px;
-        height: 50px;
-    }
-
-    .values{
-        display: flex;
-        gap: 3em;
-        justify-content: center;
     }
 </style>

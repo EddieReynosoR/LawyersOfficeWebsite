@@ -1,0 +1,23 @@
+---
+import Servicio from "@components/Servicio.astro"
+
+import { services } from "src/data/services"
+---
+
+<section class="h-screen bg-[#fff] w-full flex justify-center">
+    <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center">
+            <div class="line w-[16.5em] h-[0.4em] mt-10"></div>
+            <h1 class="title w-[15em] text-center pt-[0.7em]">
+                Especializados en varios servicios jurídicos
+            </h1>
+        </div>
+        <div class="w-full grid grid-cols-3 pt-[3em] gap-14">
+            {
+                services.map((service, index) => (
+                    <Servicio class={`col-start-${index + 1} col-span-1`} title={service.title} description={service.description} />
+                ))
+            }
+        </div>
+    </div>
+</section>

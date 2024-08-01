@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+
+import lawFirm from "@assets/images/law-firm.jpg";
+---
+
+<section class="h-screen bg-[#fff] w-full flex justify-center">
+    <div class="w-[1525px]">
+        <div class="h-screen absolute flex items-center">
+            <Image src={lawFirm} alt="Law Firm Image" class="hidden w-[38em] h-[28em] rounded-br-[4%] rounded-tr-[4%] min-[1600px]:rounded-bl-[4%] min-[1600px]:rounded-tl-[4%] min-[1532px]:block"/>
+        </div>
+        <div class="h-screen flex min-[1532px]:justify-end justify-center items-center">
+            <div class="bg-secondary w-[60em] h-[40em] rounded-tl-[2%] rounded-bl-[2%] min-[1600px]:rounded-br-[2%] min-[1600px]:rounded-tr-[2%] max-[1532px]:rounded-br-[2%] max-[1532px]:rounded-tr-[2%]">
+                <div class="p-[6em]">
+                    <div class="mb-[1em]">
+                        <p class="font-times text-[#FFA826] text-[1.5em]">Sobre nosotros</p>
+                        <h2 class="font-times text-[#fff] font-thin text-[3em]">Consultas Legales de Alta Calidad</h2>
+                    </div>
+    
+                    <div class="w-[10em] h-[0.35em] bg-[#fff]"></div>
+                    
+                    <div class="font-overpass text-[#fff] mt-[2em] w-[30em]">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim suscipit dolor eget volutpat. Cras libero urna, ultrices at mattis vitae, scelerisque eu odio. In consequat dolor et ipsum bibendum porttitor. Integer cursus finibus efficitur. 
+                        </p>
+        
+                        <p>
+                            Proin vestibulum lectus sit amet ligula lobortis iaculis. Nunc fringilla tortor id risus mattis, non bibendum velit ornare. Phasellus in cursus eros, vel elementum quam. Morbi dictum pretium risus, sit amet ultrices sapien efficitur vitae. Nam at nisi ultricies, blandit lorem nec, imperdiet libero. Aliquam ut quam a risus efficitur posuere.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

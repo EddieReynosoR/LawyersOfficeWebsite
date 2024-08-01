@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+
+import LawyerImage from "@assets/images/lawyers/lawyer-image.jpg";
+
+const { name, position, class: className } = Astro.props;
+---
+
+<div class={`min-h-fit ${className} flex flex-col items-center`}>
+    <div class="w-[254px]">
+        <Image class="w-[254px] h-[350px] object-cover" src={LawyerImage} alt="Lawyer Image" />
+        <h1 class="lawyer-name text-[1.8em] text-center mt-2">{name}</h1>
+        <p class="text-[#515151] text-[1em] text-center">{position}</p>
+    </div>
+</div>
+
+<style>
+    .lawyer-name {
+        font-family:'Times New Roman', Times, serif;
+    }
+</style>

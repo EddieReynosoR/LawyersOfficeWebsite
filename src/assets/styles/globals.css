@@ -1,5 +1,6 @@
 :root {
     --main-color: #0028FA;
+    --second-main-color: #102D9F;
 }
 
 @font-face {
@@ -36,4 +37,17 @@ body {
 
 p{
     font-family: "Overpass", sans-serif;
+}
+
+h1.title {
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--main-color);
+    font-size: 3.5em;
+}
+
+div.line {
+    background-color: var(--main-color);
+    width: 16.5em;
+    height: 0.4em;
+    margin-top: 2.5em;
 }
