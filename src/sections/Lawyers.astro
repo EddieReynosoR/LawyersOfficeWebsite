@@ -4,19 +4,21 @@ import LawyerCard from "@components/LawyerCard.astro";
 import { lawyers } from "src/data/lawyers";
 ---
 
-<section class="h-screen bg-[#fff] w-full pl-20 pt-10 pr-10">
-    <div class="w-full">
-        <div class="line w-[16.5em] h-[0.4em] mt-10"></div>
-        <h1 class="title">Conoce a nuestros abogados</h1>
-        <p class="text-[#515151] w-[28em] text-pretty">
-            Contamos con abogados profesionales que cuentan con diferentes tipos de reconocimientos por su gran trabajo.
-        </p>
-    </div>
-    <div class="w-full grid grid-cols-3 pt-[3em] gap-15">
-        {
-            lawyers.map((lawyer, index) => (
-                <LawyerCard class={`col-start-${index + 1} col-span-1`} name={lawyer.name} position={lawyer.position} />
-            ))
-        }
+<section class="h-full min-h-[1080px] bg-[#fff] w-full pl-20 pr-10 flex justify-center">
+    <div class="w-[1200px]">
+        <div class="w-full">
+            <div class="line w-[16.5em] h-[0.4em] mt-10"></div>
+            <h1 class="title">Conoce a nuestros abogados</h1>
+            <p class="text-[#515151] w-[28em] text-pretty">
+                Contamos con abogados profesionales que cuentan con diferentes tipos de reconocimientos por su gran trabajo.
+            </p>
+        </div>
+        <div class="w-full grid grid-cols-3 pt-[3em] gap-15">
+            {
+                lawyers.map((lawyer, index) => (
+                    <LawyerCard class={`col-start-${index + 1} col-span-1`} name={lawyer.name} position={lawyer.position} />
+                ))
+            }
+        </div>
     </div>
 </section>

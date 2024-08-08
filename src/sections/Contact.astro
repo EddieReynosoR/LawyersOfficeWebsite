@@ -1,8 +1,20 @@
 ---
-import ContactForm from "@components/ContactForm.astro";
+import { Image } from "astro:assets";
+
+import { ContactForm } from "@components/ContactForm";
+import ContactFormImage from "@assets/images/contact-form-image.webp";
 ---
 
-<section class="h-full">
-    <h1>Ponerse en contacto</h1>
-    <ContactForm />
+<section class="h-full min-h-[1080px] flex flex-col justify-center">
+    <div class="flex justify-center p-4">
+        <Image class="hidden min-[1100px]:block w-[400px] h-[600px] object-cover mr-[3em]" src={ContactFormImage} alt="Contact Form Image" />
+        <div>
+            <div class="mb-10">
+                <div class="line"></div>
+                <h1 class="title mt-10">¿Necesitas un abogado?</h1>
+                <p class="font-times text-[1.8em] text-[#515151] pl-5">Solicitalo SIN COSTO</p>
+            </div>
+            <ContactForm client:only="react" />
+        </div>
+    </div>
 </section>

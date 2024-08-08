@@ -1,10 +1,12 @@
 ---
-import Servicio from "@components/Servicio.astro"
+import Servicio from "@components/Servicio.astro";
 
-import { services } from "src/data/services"
+import { SERVICES } from "@/data/services/services";
+
+const firstThreeServices = SERVICES.slice(0, 3);
 ---
 
-<section class="h-screen bg-[#fff] w-full flex justify-center">
+<section class="h-full min-h-[1080px] bg-[#fff] w-full flex justify-center">
     <div class="flex flex-col items-center">
         <div class="flex flex-col items-center">
             <div class="line w-[16.5em] h-[0.4em] mt-10"></div>
@@ -14,8 +16,8 @@ import { services } from "src/data/services"
         </div>
         <div class="w-full grid grid-cols-3 pt-[3em] gap-14">
             {
-                services.map((service, index) => (
-                    <Servicio class={`col-start-${index + 1} col-span-1`} title={service.title} description={service.description} />
+                firstThreeServices.map((service, index) => (
+                    <Servicio class={`col-start-${index + 1} col-span-1`} id={service.id} title={service.title} description={service.description} />
                 ))
             }
         </div>

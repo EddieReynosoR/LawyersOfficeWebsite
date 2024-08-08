@@ -1,12 +1,12 @@
 ---
 import { Image } from "astro:assets";
-import ladyJusticeImage from "@assets/images/lady-justice.png";
+import ladyJusticeImage from "@assets/images/lady-justice.webp";
 
 import Button1 from "@components/ui/Button1.astro";
 import Button2 from "@components/ui/Button2.astro";
 ---
 
-<header class="background h-screen object-cover bg-no-repeat bg-cover bg-fixed flex justify-center items-center overflow-hidden relative">
+<header class="background h-full min-h-[1080px] object-cover bg-no-repeat bg-cover bg-fixed flex justify-center items-center overflow-hidden relative">
     <div class="title h-[70vh] flex gap-x-0 gap-y-0 items-center max-w-screen-xl">
         <div class="w-full min-w-[18em]">
             <div class="flex flex-col justify-center">
@@ -30,7 +30,7 @@ import Button2 from "@components/ui/Button2.astro";
 
 <style>
 	.background {
-		background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../assets/images/main-page-image.jpeg");
+		background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../assets/images/main-page-image.webp");
 	}
 
 	.title div h1{

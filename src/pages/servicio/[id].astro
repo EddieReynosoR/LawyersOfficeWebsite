@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import { SERVICES } from "@/data/services/services";
+
+export function getStaticPaths() {
+  return SERVICES.map(({ id }) => {
+    return { params: { id } }
+  });
+}
+
+const { id } = Astro.params;
+
+const [ service ] = SERVICES.filter((service) => service.id === id);
+---
+<Layout>
+  <div>{service.title}</div>
+  <Image src={`/src/assets/images/services/${service.image}`} alt="Service Image" width={500} height={500}/>
+</Layout>
