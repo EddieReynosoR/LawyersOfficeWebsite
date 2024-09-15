@@ -1,0 +1,32 @@
+---
+const { title, answer } = Astro.props;
+
+let formattedArray : string[][] = [];
+
+for(let i = 0; i < answer.length; i += 3) {
+    let newList = answer.slice(i, i + 3);
+
+    formattedArray.push(newList);
+}
+---
+
+<div class="ml-10">
+    <div class="max-w-[1200px]">
+        <h1 class="title mt-10 !text-[40px] max-w-[700px] mb-16">{title}</h1>
+        <ul class="list-disc list-inside marker:text-primary font-times flex flex-col items-center">
+            {
+                formattedArray.map((list) => (
+                    <div class="md:flex md:justify-center w-[600px] md:gap-20">
+                        {
+                            list.map((point) => (
+                                <div class="flex justify-center">
+                                    <li class="text-[24px] mb-6"><span class="relative left-[-10px]">{point}</span></li>
+                                </div>
+                            ))
+                        }
+                    </div>
+                ))
+            }
+        </ul>
+    </div>
+</div>

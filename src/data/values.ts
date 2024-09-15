@@ -6,7 +6,7 @@ type Ventajas = {
     description: string,
 }
 
-export const ventajas:Ventajas[] = [
+export const VENTAJAS:Ventajas[] = [
     {
         icon: Justice,
         title: "Nosotros defendemos la justicia",

@@ -1,0 +1,21 @@
+---
+import { getImage } from "astro:assets";
+
+const {title, description, image} = Astro.props;
+
+const customImage = await getImage({
+    src: image,
+    format: "webp",
+    width: 500,
+    height: 300
+});
+---
+
+<header class="h-full min-h-[1080px]">
+    <div class="flex flex-col items-center">
+        <div class="line max-w-32 mb-6"></div>
+        <h1 class="title mb-10">{title}</h1>
+        <p class="text-[#515151] w-[600px] text-center mb-16">{description}</p>
+        <img src={customImage.src} alt="Service Image" class="w-[700px] h-[350px] max-sm:w-[500px]" />
+    </div>
+</header>

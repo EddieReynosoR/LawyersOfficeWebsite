@@ -1,0 +1,36 @@
+---
+import Goal from "@components/Goal.astro";
+import Mission from "@components/icons/Mission.astro";
+import Vision from "@components/icons/Vision.astro";
+
+const GOALS = [
+    {
+        icon: Mission,
+        title: "Misión",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate auctor dictum. Vivamus condimentum turpis sem, quis rutrum diam cursus eget. Nulla lobortis sed tellus eget ultrices. In hac habitasse platea dictumst. Curabitur cursus eu augue ac eleifend. "
+    },
+    {
+        icon: Vision,
+        title: "Visión",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate auctor dictum. Vivamus condimentum turpis sem, quis rutrum diam cursus eget. Nulla lobortis sed tellus eget ultrices. In hac habitasse platea dictumst. Curabitur cursus eu augue ac eleifend. "
+    }
+]
+---
+<header class="h-full min-h-[1080px] p-10">
+    <div class="flex flex-col gap-32 items-center">
+        <div>
+            <div class="line !w-[13em]"></div>
+            <h1 class="title mb-10">DESPACHO JURÍDICO ROMERO'S & ASOCIADOS</h1>
+            <p class="text-pcolor w-[640px] text-pretty">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate auctor dictum. Vivamus condimentum turpis sem, quis rutrum diam cursus eget. Nulla lobortis sed tellus eget ultrices. In hac habitasse platea dictumst. Curabitur cursus eu augue ac eleifend.
+            </p>
+        </div>
+        <div class="flex gap-14">
+            {
+                GOALS.map((item) => (
+                    <Goal title={item.title} description={item.text} icon={item.icon} />
+                ))
+            }
+        </div>
+    </div>
+</header>

@@ -1,0 +1,19 @@
+---
+import ContactMethod from "@components/ContactMethod.astro";
+import { CONTACT_METHODS } from "@/data/contactMethods";
+---
+<header class="h-full min-h-[1080px]">
+    <div class="flex flex-col items-center">
+        <h1 class="title">Ponerse en contacto</h1>
+        <p class="text-[#515151] text-center">Contáctanos AHORA, para poder proveerte el mejor servicio y respaldo legal para tí.</p>
+        <div class="grid grid-cols-3 gap-15 w-full min-w-[1000px] mt-20 max-w-[1200px]">
+        {
+            CONTACT_METHODS.map((method, index) => (
+                <div class="w-full flex justify-center">
+                    <ContactMethod class={`col-start-${index + 1} col-span-1`} icon={method.icon} title={method.title} description={method.description} buttonText={method.buttonText} />
+                </div>
+            ))
+        }
+        </div>
+    </div>
+</header>

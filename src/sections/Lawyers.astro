@@ -16,7 +16,9 @@ import { lawyers } from "src/data/lawyers";
         <div class="w-full grid grid-cols-3 pt-[3em] gap-15">
             {
                 lawyers.map((lawyer, index) => (
-                    <LawyerCard class={`col-start-${index + 1} col-span-1`} name={lawyer.name} position={lawyer.position} />
+                    <a href={`/sobre-nosotros/abogados/${lawyer.name}`}>
+                        <LawyerCard class={`col-start-${index + 1} col-span-1 cursor-pointer`} name={lawyer.name} position={lawyer.position} />
+                    </a>
                 ))
             }
         </div>

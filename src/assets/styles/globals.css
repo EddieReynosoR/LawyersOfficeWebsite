@@ -62,6 +62,8 @@
 :root {
   --main-color: #0028FA;
   --second-main-color: #102D9F;
+  --third-main-color: #D5EBFF;
+  --text-color: #515151;
 }
 
 @font-face {

@@ -1,0 +1,21 @@
+---
+import ServiceAnswer from "@components/ServiceAnswer.astro";
+import ServicePoints from "@components/ServicePoints.astro";
+
+const { title, answer } = Astro.props;
+
+const checkIfAnswerIsArray = () => {
+    if(Array.isArray(answer)){
+        return true;
+    }
+
+    return false;
+}
+---
+<section class="h-[700px]">
+    {
+        checkIfAnswerIsArray() ? 
+            <ServicePoints title={title} answer={answer} />
+            : <ServiceAnswer title={title} answer={answer} />
+    }
+</section>

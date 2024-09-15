@@ -1,0 +1,16 @@
+---
+const {title, description, icon: Icon, class: className} = Astro.props;
+---
+<div class={`border-solid border-2 border-[#dbdbdb] rounded-lg p-4 w-[593px] h-fit flex ${className ?? ""}`}>
+    <div class="relative h-[70px] w-[70px] bg-third rounded-md flex-initial mr-8 mt-2">
+        <div class="flex h-[70px] w-[70px] justify-center items-center">
+            <Icon class:list={["absolute h-[50px] w-[50px]"]} />
+        </div>
+    </div>
+    <div class="h-full flex-auto">
+        <div class="mb-10">
+            <h1 class="font-times text-[1.7em]">{title}</h1>
+            <p class="text-[#515151] text-pretty min-h-[72px]">{description}</p>
+        </div>
+    </div>
+</div>

@@ -4,7 +4,7 @@ import ImageTest from "@assets/images/services/service1.webp";
 
 const { id, title, description, class: className } = Astro.props;
 ---
-<div class={`w-[307px] h-[415px] shadow-md m-0 ${className}`}>
+<div class={`w-[307px] h-min shadow-md m-0 ${className}`}>
     <div class="w-full h-[200px]">
         <Image class="h-full" src={ImageTest} alt="Service Image" />
     </div>
@@ -14,7 +14,7 @@ const { id, title, description, class: className } = Astro.props;
             {description}
         </p>
 
-        <div class="flex items-center h-[100px]">
+        <div class="flex items-center h-[50px]">
             <a class="pl-1 font-times text-primary cursor-pointer" href={`/servicio/${id}`}>Ver más</a>
         </div>
     </div>

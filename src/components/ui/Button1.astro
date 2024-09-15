@@ -1,7 +1,8 @@
 ---
+const props = Astro.props;
 ---
 
-<button class="Call">Llámanos ahora</button>
+<button {...props}>{props.text}</button>
 
 <style>
     .Call {

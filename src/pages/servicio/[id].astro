@@ -1,7 +1,10 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
-import { SERVICES } from "@/data/services/services";
+import Title from "@sections/services/Title.astro";
+import ServiceSection from "@sections/services/ServiceSection.astro";
+import Contact from "@sections/Contact.astro";
+
+import { SERVICES } from "@/data/services";
 
 export function getStaticPaths() {
   return SERVICES.map(({ id }) => {
@@ -14,6 +17,13 @@ const { id } = Astro.params;
 const [ service ] = SERVICES.filter((service) => service.id === id);
 ---
 <Layout>
-  <div>{service.title}</div>
-  <Image src={`/src/assets/images/services/${service.image}`} alt="Service Image" width={500} height={500}/>
+  <Title title={service.title} description={service.description} image={`/src/assets/images/${service.image}`} />
+  <main>
+    {
+      service.sections.map((section) => (
+        <ServiceSection title={section.title} answer={section.answer} />
+      ))
+    }
+    <Contact />
+  </main>
 </Layout>
