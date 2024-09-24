@@ -9,7 +9,7 @@ import { VENTAJAS } from "src/data/values";
         <div class="text-center">
             <h1 class="font-perpetua text-primary values-title not-italic font-thin mb-[2em]">¿Porqué somos tu mejor opción?</h1>
         </div>
-        <div class="flex gap-[3em] justify-center">
+        <div class="flex gap-[3em] justify-center max-[768px]:flex-col">
             {VENTAJAS.map((item) => (
                 <Ventaja image={item.icon} title={item.title} description={item.description} />
             ))}
