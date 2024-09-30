@@ -4,12 +4,12 @@ import Ventaja from "@components/Ventaja.astro";
 import { VENTAJAS } from "src/data/values";
 ---
 
-<section class="bg-[#F5F5F5] h-[1080px] min-h-full flex items-center justify-center relative">
-    <div>
+<section class="bg-[#F5F5F5] min-h-[1080px] h-full flex items-center justify-center relative overflow-auto pb-10 pt-10">
+    <div class="flex flex-col items-center">
         <div class="text-center">
             <h1 class="font-perpetua text-primary values-title not-italic font-thin mb-[2em]">¿Porqué somos tu mejor opción?</h1>
         </div>
-        <div class="flex gap-[3em] justify-center max-[768px]:flex-col">
+        <div class="values-content flex gap-[3em] justify-center">
             {VENTAJAS.map((item) => (
                 <Ventaja image={item.icon} title={item.title} description={item.description} />
             ))}
@@ -19,6 +19,19 @@ import { VENTAJAS } from "src/data/values";
 
 <style>
     .values-title{
-        font-size: clamp(1.5em,3vw,4.2em);
+        font-size: clamp(1em,3vw,4.2em);
+    }
+
+    .values-content {
+        flex-direction: column;
+        width: 90%;
+        align-items: center;
+    }
+
+    @media screen and (min-width:1280px) {
+        .values-content {
+            flex-direction: row;
+            width: 100%;
+        }
     }
 </style>

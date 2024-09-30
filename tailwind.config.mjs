@@ -72,6 +72,9 @@ export default {
 			},
 			gridAutoRows: {
 				'20': 'repeat(20, minmax(0, 1fr))'
+			},
+			sceens: {
+				'custom': '991px'
 			}
 		  },
 	},

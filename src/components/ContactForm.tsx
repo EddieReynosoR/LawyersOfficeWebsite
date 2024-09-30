@@ -47,7 +47,7 @@ export const ContactForm = () => {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-md pl-5">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-md md:pl-5">
                 <FormField 
                 control={form.control}
                 name="email"

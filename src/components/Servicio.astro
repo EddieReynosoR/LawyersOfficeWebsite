@@ -4,18 +4,28 @@ import ImageTest from "@assets/images/services/service1.webp";
 
 const { id, title, description, class: className } = Astro.props;
 ---
-<div class={`w-[307px] h-min shadow-md m-0 ${className}`}>
-    <div class="w-full h-[200px]">
-        <Image class="h-full" src={ImageTest} alt="Service Image" />
-    </div>
-    <div class="pl-4 pr-[1em] h-[215px]">
-        <h2 class="font-times text-[1.5em] pt-4">{title}</h2>
-        <p class="text-[1em] text-[#515151] text-pretty mt-3">
-            {description}
-        </p>
-
-        <div class="flex items-center h-[50px]">
-            <a class="pl-1 font-times text-primary cursor-pointer" href={`/servicio/${id}`}>Ver más</a>
+<div class={`cursor-pointer w-[307px] h-min shadow-md m-0 ${className}`}>
+    <a href={`/servicio/${id}`}>
+        <div class="w-full h-[200px]">
+            <Image class="h-full" src={ImageTest} alt="Service Image" />
         </div>
-    </div>
+        <div class="pl-4 pr-[1em] h-[220px]">
+            <h2 class="font-times text-[1.5em] pt-4">{title}</h2>
+            <p class="service-text text-[#515151] text-pretty mt-3">
+                {description}
+            </p>
+
+            <p class="text-lg mt-5 group relative w-max">
+                <span class="pl-1 font-times text-primary cursor-pointer">Ver más</span>
+                <span class="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-primary group-hover:w-full mb-1"></span>
+            </p>
+            </div>
+        </div>
+    </a>
 </div>
+
+<style>
+    .service-text {
+        font-size: clamp(0.8em,3vw,1em);
+    }
+</style>

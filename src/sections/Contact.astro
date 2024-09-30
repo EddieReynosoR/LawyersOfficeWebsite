@@ -10,11 +10,19 @@ import ContactFormImage from "@assets/images/contact-form-image.webp";
         <Image class="hidden min-[1100px]:block w-[400px] h-[600px] object-cover mr-[3em]" src={ContactFormImage} alt="Contact Form Image" />
         <div>
             <div class="mb-10">
-                <div class="line"></div>
-                <h1 class="title mt-10">¿Necesitas un abogado?</h1>
-                <p class="font-times text-[1.8em] text-[#515151] pl-5">Solicitalo SIN COSTO</p>
+                <div class="w-full flex justify-center">
+                    <div class="line"></div>
+                </div>
+                <h1 class="title contact-title mt-10 text-center md:text-left">¿Necesitas un abogado?</h1>
+                <p class="font-times text-[1.8em] text-[#515151] md:pl-5 text-center md:text-left">Solicitalo SIN COSTO</p>
             </div>
             <ContactForm client:only="react" />
         </div>
     </div>
 </section>
+
+<style>
+    .contact-title {
+        font-size: clamp(2em,2vw,5em);
+    }
+</style>

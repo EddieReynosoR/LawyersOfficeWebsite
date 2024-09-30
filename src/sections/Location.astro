@@ -4,23 +4,23 @@ import Button1 from "@components/ui/Button1.astro";
 
 <section class="background h-full min-h-[1080px] flex items-center">
     <div class="w-full flex max-[1200px]:flex-col justify-center max-[1200px]:items-center">
-        <div class="w-[30em] min-[1200px]:mr-10 max-[1200px]:mb-10">
+        <div class="w-full md:w-[30em] min-[1200px]:mr-10 max-[1200px]:mb-10">
             <div>
-                <h1 class="title leading-none max-[1200px]:text-center">
+                <h1 class="title location-title leading-none max-[1200px]:text-center pl-5 pr-5 md:pl-0 md:pr-2">
                     Resuelve tus dudas legales con nosotros
                 </h1>
-                <p class="font-times text-[2em] mt-5 max-[1200px]:text-center">
+                <p class="location font-times mt-5 max-[1200px]:text-center">
                     Tijuana, Baja California, México
                 </p>
-                <p class="mt-3 text-[1.2em] max-[1200px]:text-center">
+                <p class="location-direction mt-3 max-[1200px]:text-center">
                     Zona Río, col. Tal de tal 22246
                 </p>
             </div>
             <div class="min-[1200px]:mt-20  max-[1200px]:flex max-[1200px]:justify-center max-[1200px]:mt-10 max-[1200px]:mb-[1.5em]">
-                <Button1 class:list={["Call"]} text="Llámanos ahora" />
+                <Button1 class="Call location-call" text="Llámanos ahora" />
             </div>
         </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13459.162875588492!2d-116.98126415060368!3d32.50502229999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d939ebe01bbfa9%3A0x9a14d381e99d20ed!2sRM%20Despacho%20Juridico!5e0!3m2!1ses!2smx!4v1722745343745!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13459.162875588492!2d-116.98126415060368!3d32.50502229999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d939ebe01bbfa9%3A0x9a14d381e99d20ed!2sRM%20Despacho%20Juridico!5e0!3m2!1ses!2smx!4v1722745343745!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </section>
 
@@ -30,5 +30,29 @@ import Button1 from "@components/ui/Button1.astro";
 
         background-size: cover;
         background-repeat: no-repeat;
+    }
+
+    .location-title {
+        font-size: clamp(2em,6vw,5em);
+    }
+
+    .location {
+        font-size: clamp(1em,3vw,2em);
+    }
+
+    .location-direction {
+        font-size: clamp(0.8em,3vw,1.2em);
+    }
+
+    @media screen and (max-width:768px) {
+        .location-call {
+            width: 200px;
+            height: 50px;
+            font-size: 16px;
+        }
+
+        .map {
+            width: 90%;
+        }
     }
 </style>

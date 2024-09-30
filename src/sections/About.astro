@@ -10,16 +10,18 @@ import lawFirm from "@assets/images/law-firm.webp";
             <Image src={lawFirm} alt="Law Firm Image" class="hidden w-[38em] h-[28em] rounded-br-[4%] rounded-tr-[4%] min-[1600px]:rounded-bl-[4%] min-[1600px]:rounded-tl-[4%] min-[1532px]:block"/>
         </div>
         <div class="h-[1080px] flex min-[1532px]:justify-end justify-center items-center">
-            <div class="bg-secondary w-[60em] h-[40em] rounded-tl-[2%] rounded-bl-[2%] min-[1600px]:rounded-br-[2%] min-[1600px]:rounded-tr-[2%] max-[1532px]:rounded-br-[2%] max-[1532px]:rounded-tr-[2%]">
-                <div class="p-[6em]">
+            <div class="bg-secondary lg:w-full max-w-[60em] h-[40em] lg:rounded-tl-[2%] lg:rounded-bl-[2%] min-[1600px]:rounded-br-[2%] min-[1600px]:rounded-tr-[2%] customBorderRadius">
+                <div class="p-2 md:p-[6em]">
                     <div class="mb-[1em]">
-                        <p class="font-times text-[#FFA826] text-[1.5em]">Sobre nosotros</p>
-                        <h2 class="font-times text-[#fff] font-thin text-[3em]">Consultas Legales de Alta Calidad</h2>
+                        <p class="about font-times text-[#FFA826] text-center md:text-left">Sobre nosotros</p>
+                        <h2 class="about-title font-times text-[#fff] font-thin text-center md:text-left">Consultas Legales de Alta Calidad</h2>
                     </div>
-    
-                    <div class="w-[10em] h-[0.35em] bg-[#fff]"></div>
                     
-                    <div class="font-overpass text-[#fff] mt-[2em] w-[30em]">
+                    <div class="w-full flex justify-center md:justify-normal">
+                        <div class="w-[10em] h-[0.35em] bg-[#fff]"></div>
+                    </div>
+                    
+                    <div class="font-overpass text-[#fff] mt-[2em] md:w-[30em] about-text w-full pl-3 pr-3 md:pl-0 md:pr-0">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim suscipit dolor eget volutpat. Cras libero urna, ultrices at mattis vitae, scelerisque eu odio. In consequat dolor et ipsum bibendum porttitor. Integer cursus finibus efficitur. 
                         </p>
@@ -33,3 +35,37 @@ import lawFirm from "@assets/images/law-firm.webp";
         </div>
     </div>
 </section>
+
+<style>
+
+    .about {
+        font-size: clamp(1.1em,3vw,1.5em);
+    }
+
+    .about-title {
+        font-size: clamp(2em,5vw,3em);
+    }  
+
+    .about-text {
+        font-size: clamp(0.6em,3vw,1em);
+    }
+
+    .about-text p {
+        text-wrap: pretty;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1532px){
+        .customBorderRadius {
+           border-top-right-radius: 2%;
+           border-bottom-right-radius: 2%;
+       }
+    }
+
+    @media screen and (max-width: 768px) {
+        .customBorderRadius { 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+</style>
