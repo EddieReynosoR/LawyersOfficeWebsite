@@ -1,4 +1,4 @@
-type Questions = {
+ type Questions = {
     title: string,
     answer: string | string[]
 }
@@ -33,8 +33,8 @@ export const SERVICES: Service[] = [
         ]
     },
     {
-        id: "abogado-penal",
-        title: "Abogado Penal",
+        id: "abogado-test",
+        title: "Abogado Test",
         description: "Nuestros abogados especialistas con más de 25 años de experiencia en derecho penal están para ayudarte y para velar por tus intereses.",
         image: "contact-form-image.webp",
         sections: [

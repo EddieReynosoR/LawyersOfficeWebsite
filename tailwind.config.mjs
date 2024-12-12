@@ -73,8 +73,12 @@ export default {
 			gridAutoRows: {
 				'20': 'repeat(20, minmax(0, 1fr))'
 			},
-			sceens: {
-				'custom': '991px'
+			screens: {
+				custom: '900px',
+				service: '700px',
+				service2: '1055px',
+				lawyers: '865px',
+				presentation: '1600px'				
 			}
 		  },
 	},

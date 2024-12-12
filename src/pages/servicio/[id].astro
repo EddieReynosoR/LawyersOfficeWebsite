@@ -6,21 +6,29 @@ import Contact from "@sections/Contact.astro";
 
 import { SERVICES } from "@/data/services";
 
+export const prerender = true;
+
 export function getStaticPaths() {
-  return SERVICES.map(({ id }) => {
-    return { params: { id } }
+  return SERVICES.map(({ id, title, description, image, sections }) => {
+    return {
+      params: { id },
+      props: { title, description, image, sections },
+    };
   });
 }
 
-const { id } = Astro.params;
-
-const [ service ] = SERVICES.filter((service) => service.id === id);
+const { title, description, image, sections } = Astro.props;
 ---
+
 <Layout>
-  <Title title={service.title} description={service.description} image={`/src/assets/images/${service.image}`} />
+  <Title
+    title={title}
+    description={description}
+    image={`/src/assets/images/${image}`}
+  />
   <main>
     {
-      service.sections.map((section) => (
+      sections.map((section) => (
         <ServiceSection title={section.title} answer={section.answer} />
       ))
     }

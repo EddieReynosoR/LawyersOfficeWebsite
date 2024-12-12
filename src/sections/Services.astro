@@ -2,30 +2,37 @@
 import Servicio from "@components/Servicio.astro";
 
 import { SERVICES } from "@/data/services";
-
-const firstThreeServices = SERVICES.slice(0, 3);
 ---
 
-<section class="h-full min-h-[1080px] bg-[#fff] w-full flex justify-center">
+<section
+  class="h-full min-h-[1080px] bg-[#fff] w-full flex justify-center max-lg:mb-10"
+>
+  <div class="flex flex-col items-center">
     <div class="flex flex-col items-center">
-        <div class="flex flex-col items-center">
-            <div class="line w-[16.5em] h-[0.4em] mt-10"></div>
-            <h1 class="title md:w-[15em] text-center pt-[0.7em]">
-                Especializados en varios servicios jurídicos
-            </h1>
-        </div>
-        <div class="w-full flex flex-col items-center gap-8 lg:grid lg:grid-cols-3 pt-[3em] lg:gap-14">
-            {
-                firstThreeServices.map((service, index) => (
-                    <Servicio class={`col-start-${index + 1} col-span-1`} id={service.id} title={service.title} description={service.description} />
-                ))
-            }
-        </div>
+      <div class="line w-[16.5em] h-[0.4em] mt-10"></div>
+      <h1 class="title md:w-[15em] text-center pt-[0.7em]">
+        Especializados en varios servicios jurídicos
+      </h1>
     </div>
+    <div
+      class="w-full flex flex-col items-center gap-8 service:grid service:grid-cols-2 service2:grid-cols-3 pt-[3em] service2:gap-14"
+    >
+      {
+        SERVICES.map((service, index) => (
+          <Servicio
+            class={`col-start-${index + 1} col-span-1`}
+            id={service.id}
+            title={service.title}
+            description={service.description}
+          />
+        ))
+      }
+    </div>
+  </div>
 </section>
 
 <style>
-    .title {
-        font-size: clamp(2em,3vw,5em);
-    }
+  .title {
+    font-size: clamp(2em, 2vw, 5em);
+  }
 </style>

@@ -1,36 +1,42 @@
 ---
 import Goal from "@components/Goal.astro";
-import Mission from "@components/icons/Mission.astro";
-import Vision from "@components/icons/Vision.astro";
-
-const GOALS = [
-    {
-        icon: Mission,
-        title: "Misión",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate auctor dictum. Vivamus condimentum turpis sem, quis rutrum diam cursus eget. Nulla lobortis sed tellus eget ultrices. In hac habitasse platea dictumst. Curabitur cursus eu augue ac eleifend. "
-    },
-    {
-        icon: Vision,
-        title: "Visión",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate auctor dictum. Vivamus condimentum turpis sem, quis rutrum diam cursus eget. Nulla lobortis sed tellus eget ultrices. In hac habitasse platea dictumst. Curabitur cursus eu augue ac eleifend. "
-    }
-]
+import { GOALS } from "@/data/goals";
 ---
-<header class="h-full min-h-[1080px] p-10">
-    <div class="flex flex-col gap-32 items-center">
-        <div>
-            <div class="line !w-[13em]"></div>
-            <h1 class="title mb-10">DESPACHO JURÍDICO ROMERO'S & ASOCIADOS</h1>
-            <p class="text-pcolor w-[640px] text-pretty">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate auctor dictum. Vivamus condimentum turpis sem, quis rutrum diam cursus eget. Nulla lobortis sed tellus eget ultrices. In hac habitasse platea dictumst. Curabitur cursus eu augue ac eleifend.
-            </p>
-        </div>
-        <div class="flex gap-14">
-            {
-                GOALS.map((item) => (
-                    <Goal title={item.title} description={item.text} icon={item.icon} />
-                ))
-            }
-        </div>
+
+<header class="h-max md:h-full min-h-[1080px] p-10">
+  <div class="flex flex-col gap-12 items-center">
+    <div>
+      <div class="w-full flex justify-center md:justify-normal">
+        <div class="line !w-[13em]"></div>
+      </div>
+      <h1 class="title text-center md:text-left mb-10 about-title max-sm:mt-5">
+        DESPACHO JURÍDICO ROMERO'S & ASOCIADOS
+      </h1>
+      <p class="header-text text-pcolor w-full md:w-[640px] text-pretty">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate
+        auctor dictum. Vivamus condimentum turpis sem, quis rutrum diam cursus
+        eget. Nulla lobortis sed tellus eget ultrices. In hac habitasse platea
+        dictumst. Curabitur cursus eu augue ac eleifend.
+      </p>
     </div>
+    <div
+      class="flex flex-col min-[1280px]:flex-row gap-10 min-[1280px]:gap-14 min-w-[250px]"
+    >
+      {
+        GOALS.map((item) => (
+          <Goal title={item.title} description={item.text} icon={item.icon} />
+        ))
+      }
+    </div>
+  </div>
 </header>
+
+<style>
+  .about-title {
+    font-size: clamp(2em, 2vw, 5em);
+  }
+
+  .header-text {
+    font-size: clamp(0.8em, 1.2vw, 1.2em);
+  }
+</style>

@@ -1,12 +1,37 @@
 ---
 const {title, description} = Astro.props;
 ---
-<div class="mb-20">
-    <div class="mb-6">
-        <h2 class="font-times text-[1.8em]">{title}</h2>
+<div class="mb-20 w-full">
+    <div class="values-container mb-6 ">
+        <h2 class="value-title font-times text-[1.8em]">{title}</h2>
         <div class="line !w-20 !m-0"></div>
     </div>
-    <p class="text-pcolor">
+    <p class="value-text text-pcolor w-full">
         {description}
     </p>
 </div>
+
+<style>
+    .value-title {
+        font-size: clamp(1em, 2vw, 2em);
+    }
+
+    .value-text {
+        font-size: clamp(0.8em,1.1vw,1.2em);
+    }
+
+    @media screen and (max-width: 768px) {
+        .values-container {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .values-container h2 {
+            width: 100%;
+            text-align: center;
+        }
+    }
+</style>

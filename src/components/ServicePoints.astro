@@ -10,10 +10,10 @@ for(let i = 0; i < answer.length; i += 3) {
 }
 ---
 
-<div class="ml-10">
-    <div class="max-w-[1200px]">
-        <h1 class="title mt-10 !text-[40px] max-w-[700px] mb-16">{title}</h1>
-        <ul class="list-disc list-inside marker:text-primary font-times flex flex-col items-center">
+<div class="ml-2 md:ml-10">
+    <div class="w-full flex flex-col justify-center items-center">
+        <h1 class="w-[90%] md:w-[100%] service-section-title title mt-10 max-w-[700px] mb-16">{title}</h1>
+        <ul class="max-mb:ml-10 list-disc list-inside marker:text-primary font-times flex flex-col items-center">
             {
                 formattedArray.map((list) => (
                     <div class="md:flex md:justify-center w-[600px] md:gap-20">
@@ -30,3 +30,9 @@ for(let i = 0; i < answer.length; i += 3) {
         </ul>
     </div>
 </div>
+
+<style>
+    .service-section-title {
+        font-size: clamp(2em,2vw,5em);
+    }
+</style>

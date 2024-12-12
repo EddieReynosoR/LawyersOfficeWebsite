@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { lawyers } from "@/data/lawyers";
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return lawyers.map(({ name }) => {
+    return { params: { name } };
+  });
+}
+
+const { name } = Astro.params;
+---
+
+<Layout>
+  <main>{name}</main>
+</Layout>

@@ -6,82 +6,103 @@ import Button1 from "@components/ui/Button1.astro";
 import Button2 from "@components/ui/Button2.astro";
 ---
 
-<header class="background h-full min-h-[690px] object-cover bg-no-repeat bg-cover bg-fixed flex justify-center items-center overflow-hidden relative">
-    <div class="title absolute max-[768px]:top-0 lg:pt-10 md:h-[70vh] h-full flex gap-x-0 gap-y-0 items-center max-[768px]:justify-center max-w-screen-xl mb-16 mb:mb-0">
-        <div class="w-full min-w-[18em]">
-            <div class="flex flex-col justify-center">
-                <h1 class="font-light select-none mb-[0.em] mt-0 text-center">DESPACHO JURÍDICO ROMERO'S & ASOCIADOS</h1>
-        
-                <p class="title-text w-[90%] !mt-8 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim suscipit dolor eget volutpat. Cras libero urna, ultrices at mattis.</p>
-            </div>
+<header
+  class="background h-[90%] min-h-[800px] object-cover bg-no-repeat bg-cover bg-fixed flex justify-center items-center overflow-hidden relative"
+>
+  <div
+    class="title absolute max-[768px]:top-0 presentation:pt-10 md:h-[70vh] h-full flex gap-x-0 gap-y-0 items-center max-[768px]:justify-center max-w-screen-xl mb-16 mb:mb-0"
+  >
+    <div class="w-full min-w-[18em]">
+      <div class="flex flex-col justify-center">
+        <h1 class="font-light select-none mb-[0.em] mt-0 text-center">
+          DESPACHO JURÍDICO ROMERO'S & ASOCIADOS
+        </h1>
 
-            <div class="buttons-container flex justify-center mt-[2em] lg:mt-[5em]">
-                <div class="flex gap-[2em]">
-                    <Button1 class="Call !w-[200px] !h-[50px] !text-[1.2em]" text="Llámanos ahora" />
-                    <Button2 class="Call !w-[200px] !h-[50px] !text-[1.2em]" />
-                </div>
-            </div>
+        <p class="title-text w-[90%] !mt-8 text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim
+          suscipit dolor eget volutpat. Cras libero urna, ultrices at mattis.
+        </p>
+      </div>
+
+      <div class="buttons-container flex justify-center mt-[2em] lg:mt-[5em]">
+        <div class="flex gap-[2em]">
+          <Button1
+            class="Call !w-[200px] !h-[50px] !text-[1.2em]"
+            text="Llámanos ahora"
+          />
+          <Button2 class="Call !w-[200px] !h-[50px] !text-[1.2em]" />
         </div>
-        <div class="flex items-center justify-center w-[30%]">
-            <Image class="lady-justice select-none max-[768px]:h-[1.5em] mb:w-[14.5em]" src={ladyJusticeImage} alt="Lady Justice" width={250} height={550}/>
-        </div>
+      </div>
     </div>
+    <div class="flex items-center justify-center w-[30%]">
+      <Image
+        class="lady-justice select-none max-[768px]:h-[1.5em] mb:w-[14.5em]"
+        src={ladyJusticeImage}
+        alt="Lady Justice"
+        width={250}
+        height={550}
+      />
+    </div>
+  </div>
 </header>
 
 <style>
-	.background {
-		background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../assets/images/main-page-image.webp");
-	}
+  .background {
+    background-image: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0.8)
+      ),
+      url("../assets/images/main-page-image.webp");
+  }
 
-	.title div h1{
-		font-family: "Perpetua Titling MT", sans-serif;
-        color: var(--main-color);
-		font-size: clamp(1.5em, 7vw, 4.2em);
-	}
+  .title div h1 {
+    font-family: "Perpetua Titling MT", sans-serif;
+    color: var(--main-color);
+    font-size: clamp(1.5em, 7vw, 4.2em);
+  }
 
-	.title-text {
-		margin: 0 auto 1em auto;
-		font-size: clamp(13px, 2vw, 20px);
-	}
+  .title-text {
+    margin: 0 auto 1em auto;
+    font-size: clamp(13px, 2vw, 20px);
+  }
 
+  .lady-justice {
+    image-rendering: auto;
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming)*/
+    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
 
+    width: 12em;
+    height: 28em;
+    min-width: 7.8em;
+  }
 
-	.lady-justice {
-		image-rendering: auto;
-		image-rendering: -moz-crisp-edges;          /* Firefox */
-		image-rendering: -o-crisp-edges;            /* Opera */
-		image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming)*/
-		-ms-interpolation-mode: nearest-neighbor;   /* IE (non-standard property) */
+  @media screen and (max-width: 768px) {
+    .background .title {
+      flex-direction: column-reverse;
+      width: 90%;
+    }
+  }
 
-		width: 12em;
-		height: 28em;		
-	}
+  @media screen and (max-width: 768px) {
+    .lady-justice {
+      width: 7.8em;
+      height: 20em;
+    }
+  }
 
-	@media screen and (max-width: 991px){
-		.background .title{
-			flex-direction: column-reverse;
-			width: 90%;
-		}
-	}
+  @media screen and (max-width: 768px) {
+    .buttons-container div {
+      flex-direction: column;
+    }
+  }
 
-	@media screen and (max-width: 991px) {
-		.lady-justice {
-			width: 7.8em;
-			height: 20em;
-		}
-	}
-
-	@media screen and (max-width: 530px) {
-
-		.buttons-container div{
-			flex-direction: column;
-		}
-	}
-
-	@media screen and (max-width: 479px) {
-		.lady-justice {
-			width: 8.2em;
-			height: 15em;
-		}
-	}
+  @media screen and (max-width: 479px) {
+    .lady-justice {
+      width: 8.2em;
+      height: 15em;
+    }
+  }
 </style>

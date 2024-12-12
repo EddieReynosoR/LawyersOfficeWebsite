@@ -10,5 +10,9 @@ export const lawyers = [
     {
         name: "Hugo Romero",
         position: "Abogado"
+    },
+    {
+        name: "Javier Rosas",
+        position: "Abogado"
     }
 ]

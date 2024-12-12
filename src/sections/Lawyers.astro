@@ -4,31 +4,48 @@ import LawyerCard from "@components/LawyerCard.astro";
 import { lawyers } from "src/data/lawyers";
 ---
 
-<section class="h-full min-h-[1080px] bg-[#fff] w-full pl-5 pr-5 md:pl-20 md:pr-10 flex md:flex-row flex-col justify-center items-center">
-    <div class="md:w-[1200px] w-full">
-        <div class="w-full pt-10 md:pt-0">
-            <div class="w-full flex justify-center md:mb-10 mb-0">
-                <div class="line w-[16.5em] h-[0.4em] mt-10"></div>
-            </div>
-            <h1 class="title lawyers-title text-center md:text-left">Conoce a nuestros abogados</h1>
-            <p class="text-[#515151] w-full md:w-[28em] text-pretty mt-5 md:m-0 text-center md:text-left">
-                Contamos con abogados profesionales que cuentan con diferentes tipos de reconocimientos por su gran trabajo.
-            </p>
-        </div>
-        <div class="w-full flex flex-col md:grid md:grid-cols-3 pt-[3em] gap-10 md:gap-15">
-            {
-                lawyers.map((lawyer, index) => (
-                    <a href={`/sobre-nosotros/abogados/${lawyer.name}`}>
-                        <LawyerCard class={`col-start-${index + 1} col-span-1 cursor-pointer`} name={lawyer.name} position={lawyer.position} />
-                    </a>
-                ))
-            }
-        </div>
+<section
+  class="h-full min-h-[1080px] bg-[#fff] w-full pl-5 pr-5 md:pl-20 md:pr-10 flex md:flex-row flex-col justify-center items-center"
+>
+  <div class="md:w-[1200px] w-full">
+    <div class="w-full pt-10 md:pt-0">
+      <div class="w-full flex justify-center md:mb-10 mb-0">
+        <div class="line w-[16.5em] h-[0.4em] mt-10"></div>
+      </div>
+      <h1 class="title lawyers-title text-center md:text-left">
+        Conoce a nuestros abogados
+      </h1>
+      <p
+        class="lawyers-text text-[#515151] w-full md:w-[28em] text-pretty mt-5 md:m-0 text-center md:text-left"
+      >
+        Contamos con abogados profesionales que cuentan con diferentes tipos de
+        reconocimientos por su gran trabajo.
+      </p>
     </div>
+    <div
+      class="w-full flex flex-col md:grid lawyers:grid-cols-3 pt-[3em] md:grid-cols-2 gap-10 lawyers:gap-15"
+    >
+      {
+        lawyers.map((lawyer, index) => (
+          <a href={`/sobre-nosotros/abogados/${lawyer.name}`}>
+            <LawyerCard
+              class={`col-start-${index + 1} col-span-1 cursor-pointer`}
+              name={lawyer.name}
+              position={lawyer.position}
+            />
+          </a>
+        ))
+      }
+    </div>
+  </div>
 </section>
 
 <style>
-    .lawyers-title {
-        font-size: clamp(2em,2vw,5em);
-    }
+  .lawyers-title {
+    font-size: clamp(2em, 2vw, 5em);
+  }
+
+  .lawyers-text {
+    font-size: clamp(0.9em,3vw,1em);
+  }
 </style>

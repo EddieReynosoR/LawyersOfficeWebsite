@@ -3,40 +3,42 @@ const { image: Image, title, description } = Astro.props;
 ---
 
 <div class="ventajaContainer">
-    <Image class="IconV w-[50px] h-[50px] md:w-[70px] md:h-[70px]"/>
-    <h3>{title}</h3>
-    <p>{description}</p>
+  <Image class="IconV w-[50px] h-[50px] md:w-[70px] md:h-[70px]" />
+  <h3>{title}</h3>
+  <p>{description}</p>
 </div>
 
 <style>
-    .ventajaContainer{
-        width: 100%;
-        height: 25em;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: #fff;
-        max-width: 22em;
-        min-width: 20em;
-    }
+  .ventajaContainer {
+    width: 100%;
+    height: 25em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    max-width: 22em;
+    min-width: 18em;
+    border-radius: 10px;
+  }
 
-    .IconV{
-        margin-bottom: 1em;
-        margin-top: 2em;
-    }
+  .IconV {
+    margin-bottom: 1em;
+    margin-top: 2em;
+  }
 
-    .ventajaContainer h3{
-        font-family: 'Times New Roman', Times, serif;
-        font-size: clamp(1.2em,3vw, 1.5em);
-        font-weight: 100;
-        margin-bottom: 2em;
-        width: 10em;
-        text-align: center;
-    }
+  .ventajaContainer h3 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: clamp(1.2em, 3vw, 1.5em);
+    font-weight: 100;
+    margin-bottom: 2em;
+    width: 10em;
+    text-align: center;
+  }
 
-    .ventajaContainer p {
-        width: 15em;
-        font-size: clamp(12px,2.5vw, 14px);
-        text-align: center;
-    }
+  .ventajaContainer p {
+    width: 15em;
+    font-size: clamp(12px, 2.5vw, 14px);
+    text-align: center;
+    color: #515151;
+  }
 </style>

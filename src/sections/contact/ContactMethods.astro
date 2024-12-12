@@ -2,11 +2,12 @@
 import ContactMethod from "@components/ContactMethod.astro";
 import { CONTACT_METHODS } from "@/data/contactMethods";
 ---
-<header class="h-max min-h-[1080px]">
-    <div class="flex flex-col items-center mt-10 md:mt-0">
+
+<header class="h-max min-h-[1080px] md:mt-10 flex items-center justify-center">
+    <div class="w-[100%] flex flex-col items-center mt-10 md:mt-0">
         <h1 class="title contact-title text-center md:text-left">Ponerse en contacto</h1>
         <p class="contact-text text-[#515151] text-center md:text-left mt-2 md:mt-0 pl-4 pr-4 md:pl-0 md:pr-0">Contáctanos AHORA, para poder proveerte el mejor servicio y respaldo legal para tí.</p>
-        <div class="flex flex-col gap-10 md:grid md:grid-cols-3 md:gap-15 w-full min-w-[1000px] mt-20 max-w-[1200px]">
+        <div class="flex flex-col gap-10 lg:grid lg:grid-cols-3 lg:gap-15 w-full min-w-[1000px] mt-20 max-w-[1200px]">
         {
             CONTACT_METHODS.map((method, index) => (
                 <div class="w-full flex justify-center">
@@ -20,10 +21,10 @@ import { CONTACT_METHODS } from "@/data/contactMethods";
 
 <style>
     .contact-title {
-        font-size: clamp(2.2em,5vw,6em);
+        font-size: clamp(2em, 2vw, 5em);
     }
 
     .contact-text {
-        font-size: clamp(0.9em,2vw,4em);
+        font-size: clamp(0.8em, 1.1vw, 1.2em);
     }
 </style>
